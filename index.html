@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCHI-VERT — Cabinet d'architecture, d'ingénierie et d'environnement au Togo</title>
+<meta name="description" content="ARCHI-VERT est un cabinet togolais d'architecture, d'ingénierie, d'urbanisme et d'environnement. Conception et suivi de projets résidentiels, tertiaires et urbains sur mesure.">
+<link rel="icon" href="images/logo-archi-vert.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="nav__brand" href="index.html">
+      <img src="images/logo-archi-vert.png" alt="ARCHI-VERT" width="42" height="42">
+      <span class="nav__brand-text">ARCHI-VERT</span>
+    </a>
+
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav__panel" id="nav-panel">
+      <ul class="nav__links">
+        <li><a href="index.html" aria-current="page">Accueil</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+      <a class="btn btn-primary" href="#contact">Prendre rendez-vous</a>
+    </div>
+  </div>
+  <div class="nav__scrim"></div>
+</header>
+
+<main id="contenu">
+
+  <!-- Hero -->
+  <section class="hero container">
+    <div class="hero__grid">
+      <div class="hero__text">
+        <h1>Une architecture pensée pour durer</h1>
+        <p class="lead">ARCHI-VERT conçoit et accompagne vos projets d'architecture, d'ingénierie et d'aménagement partout au Togo, du premier plan jusqu'à la livraison du chantier.</p>
+        <div class="hero__actions">
+          <a class="btn btn-primary" href="#contact">Demander un devis</a>
+          <a class="link-underline" href="#realisations">Voir nos réalisations</a>
+        </div>
+      </div>
+      <div class="hero__media">
+        <img src="images/hero-architecte.png" alt="Architecte présentant les plans d'un projet de construction dans les bureaux d'ARCHI-VERT" width="900" height="1200">
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistiques -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat">
+        <span class="stat__number">8+</span>
+        <span class="stat__label">Années d'expérience au Togo</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">60+</span>
+        <span class="stat__label">Projets réalisés et livrés</span>
+      </div>
+      <div class="stat">
+        <span class="stat__number">15+</span>
+        <span class="stat__label">Architectes et ingénieurs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Réalisations récentes -->
+  <!-- Les intitulés de projets ci-dessous sont des exemples : à remplacer par vos projets réels -->
+  <section class="section" id="realisations">
+    <div class="container">
+      <div class="projects__head">
+        <div class="section-head">
+          <h2>Nos derniers projets</h2>
+          <p class="lead">Un aperçu des projets que nous avons conçus et accompagnés jusqu'à leur livraison.</p>
+        </div>
+        <a class="link-underline" href="portfolio.html">Voir tous nos projets</a>
+      </div>
+
+      <div class="project-grid">
+        <a class="project-card" href="portfolio.html">
+          <div class="project-card__frame">
+            <img src="images/projet-residence-lome.jpg" alt="Résidence privée à Lomé conçue par ARCHI-VERT" loading="lazy" width="640" height="800">
+          </div>
+          <span class="project-card__category">Résidentiel</span>
+          <h3 class="project-card__title">Résidence privée</h3>
+          <span class="project-card__place">Lomé</span>
+        </a>
+        <a class="project-card" href="portfolio.html">
+          <div class="project-card__frame">
+            <img src="images/projet-bureaux-kara.jpg" alt="Immeuble de bureaux à Kara conçu par ARCHI-VERT" loading="lazy" width="640" height="800">
+          </div>
+          <span class="project-card__category">Tertiaire</span>
+          <h3 class="project-card__title">Immeuble de bureaux</h3>
+          <span class="project-card__place">Kara</span>
+        </a>
+        <a class="project-card" href="portfolio.html">
+          <div class="project-card__frame">
+            <img src="images/projet-amenagement-sokode.jpg" alt="Aménagement urbain à Sokodé conçu par ARCHI-VERT" loading="lazy" width="640" height="800">
+          </div>
+          <span class="project-card__category">Aménagement urbain</span>
+          <h3 class="project-card__title">Aménagement d'espace public</h3>
+          <span class="project-card__place">Sokodé</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section section--alt" id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>Nos services</h2>
+        <p class="lead">Une équipe pluridisciplinaire pour accompagner chaque étape de votre projet, de l'idée à la réception des travaux.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 42h36"/>
+            <path d="M10 42V22l14-12 14 12v20"/>
+            <path d="M20 42V30h8v12"/>
+          </svg>
+          <h3>Architecture</h3>
+          <p>Conception de plans, esquisses et permis de construire pour vos projets résidentiels, tertiaires et institutionnels.</p>
+          <a class="link-underline" href="services.html#architecture">En savoir plus</a>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 34h36M6 34V22M42 34V22M6 22h36M6 34l9-12M15 22l9 12M24 22l9 12M33 22l9 12"/>
+          </svg>
+          <h3>Ingénierie</h3>
+          <p>Études techniques, structures et calculs pour garantir la solidité et la conformité de vos ouvrages.</p>
+          <a class="link-underline" href="services.html#ingenierie">En savoir plus</a>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="8" y="20" width="18" height="20"/>
+            <rect x="12" y="25" width="4" height="4"/>
+            <rect x="19" y="25" width="4" height="4"/>
+            <circle cx="32" cy="18" r="7"/>
+            <path d="M37 23l5 5"/>
+          </svg>
+          <h3>Expertise immobilière</h3>
+          <p>Évaluation, diagnostic et conseil pour sécuriser vos décisions d'achat, de vente ou d'investissement.</p>
+          <a class="link-underline" href="services.html#immobilier">En savoir plus</a>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="7" y="9" width="34" height="30"/>
+            <path d="M24 9v30M7 24h17"/>
+            <rect x="30" y="26" width="7" height="9"/>
+          </svg>
+          <h3>Aménagement intérieur</h3>
+          <p>Agencement des espaces de vie et de travail, du plan de circulation jusqu'au choix des matériaux.</p>
+          <a class="link-underline" href="services.html#interieur">En savoir plus</a>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 38C10 22 22 8 40 8c0 18-12 30-28 30Z"/>
+            <path d="M13 37C20 28 28 20 38 10"/>
+          </svg>
+          <h3>Environnement</h3>
+          <p>Études d'impact et solutions durables pour concilier construction et respect du cadre de vie.</p>
+          <a class="link-underline" href="services.html#environnement">En savoir plus</a>
+        </article>
+
+        <article class="service-card">
+          <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="12" y="8" width="24" height="32" rx="2"/>
+            <rect x="18" y="6" width="12" height="6" rx="1"/>
+            <path d="M17 22l5 5 9-11"/>
+          </svg>
+          <h3>Mission de contrôle</h3>
+          <p>Suivi et vérification de la bonne exécution des travaux, de la conformité et des délais de chantier.</p>
+          <a class="link-underline" href="services.html#controle">En savoir plus</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement -->
+  <section class="section commitment">
+    <div class="container commitment__grid">
+      <div class="commitment__media">
+        <img src="images/equipe-agence.jpg" alt="Équipe d'ARCHI-VERT en réunion de conception" loading="lazy" width="700" height="525">
+      </div>
+      <div class="commitment__text">
+        <h2>Nous concrétisons vos projets avec exigence et proximité</h2>
+        <p>Nos architectes, ingénieurs et urbanistes travaillent en équipe resserrée pour rester proches de chaque client, du premier échange jusqu'à la réception du chantier.</p>
+        <p>Chaque projet est pensé pour le climat, les matériaux et les usages du Togo, avec une attention constante portée à la durabilité et à la qualité d'exécution.</p>
+        <a class="btn btn-primary" href="#contact">Contactez-nous maintenant</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Démarche -->
+  <section class="section section--alt" id="demarche">
+    <div class="container">
+      <div class="section-head">
+        <h2>De l'idée au chantier</h2>
+        <p class="lead">Une méthode claire en quatre étapes, du premier échange à la livraison de votre projet.</p>
+      </div>
+
+      <div class="process-list">
+        <div class="process-step">
+          <div class="process-step__media">
+            <img src="images/etape-diagnostic.jpg" alt="Premier échange avec un client autour d'un plan de terrain" loading="lazy" width="640" height="480">
+          </div>
+          <div class="process-step__text">
+            <span class="process-step__number">Étape 1</span>
+            <h3>Prise de contact et diagnostic</h3>
+            <p>Nous échangeons sur votre projet, le terrain et vos contraintes afin de cadrer précisément les besoins.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__media">
+            <img src="images/etape-conception.jpg" alt="Architecte dessinant un plan de conception" loading="lazy" width="640" height="480">
+          </div>
+          <div class="process-step__text">
+            <span class="process-step__number">Étape 2</span>
+            <h3>Étude et conception</h3>
+            <p>Nos architectes et ingénieurs élaborent les plans, esquisses et solutions techniques adaptées à votre projet.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__media">
+            <img src="images/etape-validation.jpg" alt="Validation d'un dossier de plans avec un client" loading="lazy" width="640" height="480">
+          </div>
+          <div class="process-step__text">
+            <span class="process-step__number">Étape 3</span>
+            <h3>Validation et autorisations</h3>
+            <p>Nous affinons le projet avec vous et préparons les dossiers administratifs nécessaires à sa réalisation.</p>
+          </div>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__media">
+            <img src="images/etape-chantier.jpg" alt="Suivi de chantier par un ingénieur d'ARCHI-VERT" loading="lazy" width="640" height="480">
+          </div>
+          <div class="process-step__text">
+            <span class="process-step__number">Étape 4</span>
+            <h3>Réalisation et suivi de chantier</h3>
+            <p>Nous accompagnons l'exécution des travaux jusqu'à la livraison, avec un contrôle rigoureux à chaque phase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partenaires -->
+  <!-- Emplacements pour vos logos partenaires : images/partenaire-1.png à partenaire-6.png -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Nos partenaires</h2>
+        <p class="lead">Ils nous accompagnent sur nos projets, en tant que fournisseurs, institutions ou partenaires techniques.</p>
+      </div>
+      <div class="partners__grid">
+        <div class="partner-slot"><img src="images/partenaire-1.png" alt="Logo partenaire" loading="lazy"></div>
+        <div class="partner-slot"><img src="images/partenaire-2.png" alt="Logo partenaire" loading="lazy"></div>
+        <div class="partner-slot"><img src="images/partenaire-3.png" alt="Logo partenaire" loading="lazy"></div>
+        <div class="partner-slot"><img src="images/partenaire-4.png" alt="Logo partenaire" loading="lazy"></div>
+        <div class="partner-slot"><img src="images/partenaire-5.png" alt="Logo partenaire" loading="lazy"></div>
+        <div class="partner-slot"><img src="images/partenaire-6.png" alt="Logo partenaire" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="section section--alt testimonials" id="temoignages">
+    <div class="container">
+      <div class="section-head">
+        <h2>Ce que nos clients disent</h2>
+        <p class="lead">Quelques retours de personnes que nous avons accompagnées dans leurs projets.</p>
+      </div>
+
+      <div class="testimonial-track">
+        <div class="testimonial-slides">
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar">
+                <img src="images/temoignage-1.jpg" alt="" loading="lazy" width="150" height="150">
+              </div>
+              <div>
+                <svg class="mark-diamond" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true" style="margin-bottom:0.75rem">
+                  <path d="M8 0L16 8L8 16L0 8Z"/><path d="M8 4L12 8L8 12L4 8Z"/>
+                </svg>
+                <p class="testimonial-card__quote">ARCHI-VERT a su comprendre nos besoins dès les premiers échanges. Le suivi de chantier a été rigoureux du début à la fin.</p>
+                <p class="testimonial-card__name">Kokou Mensah</p>
+                <p class="testimonial-card__role">Propriétaire, Lomé</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar">
+                <img src="images/temoignage-2.jpg" alt="" loading="lazy" width="150" height="150">
+              </div>
+              <div>
+                <svg class="mark-diamond" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true" style="margin-bottom:0.75rem">
+                  <path d="M8 0L16 8L8 16L0 8Z"/><path d="M8 4L12 8L8 12L4 8Z"/>
+                </svg>
+                <p class="testimonial-card__quote">Nous cherchions un cabinet capable de gérer à la fois la conception et le contrôle des travaux. L'équipe a tenu les délais annoncés.</p>
+                <p class="testimonial-card__name">Afi Dossou</p>
+                <p class="testimonial-card__role">Gérante, Kara</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar">
+                <img src="images/temoignage-3.jpg" alt="" loading="lazy" width="150" height="150">
+              </div>
+              <div>
+                <svg class="mark-diamond" width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true" style="margin-bottom:0.75rem">
+                  <path d="M8 0L16 8L8 16L0 8Z"/><path d="M8 4L12 8L8 12L4 8Z"/>
+                </svg>
+                <p class="testimonial-card__quote">Le plan d'aménagement proposé correspondait exactement à l'usage que nous voulions faire des locaux. Un travail précis et bien expliqué.</p>
+                <p class="testimonial-card__name">Yawa Adjovi</p>
+                <p class="testimonial-card__role">Directrice, Sokodé</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-controls">
+        <button type="button" class="testimonial-arrow" data-testimonial="prev" aria-label="Témoignage précédent">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l-6 6 6 6"/></svg>
+        </button>
+        <div class="testimonial-dots" role="tablist" aria-label="Sélection du témoignage"></div>
+        <button type="button" class="testimonial-arrow" data-testimonial="next" aria-label="Témoignage suivant">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-panel">
+        <form class="contact-form" id="contact-form" novalidate>
+          <h2>Discutons de votre projet</h2>
+          <p class="lead">Décrivez votre projet en quelques lignes, nous revenons vers vous rapidement.</p>
+
+          <div class="form-row form-row--two">
+            <div class="field">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="email">Adresse email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Envoyer le message</button>
+          <p class="form-status" role="status"></p>
+          <p class="form-note">L'envoi ouvre votre messagerie habituelle avec le message pré-rempli.</p>
+        </form>
+
+        <div class="contact-info">
+          <div>
+            <h3>Coordonnées</h3>
+            <p>ARCHI-VERT intervient sur l'ensemble du territoire togolais, depuis Lomé.</p>
+          </div>
+
+          <ul class="contact-list">
+            <li>
+              <svg class="mark-diamond" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 0L16 8L8 16L0 8Z"/><path d="M8 4L12 8L8 12L4 8Z"/></svg>
+              <div>
+                <span class="contact-list__label">Téléphone</span>
+                <a href="tel:+22891345970">(+228) 91 34 59 70</a><br>
+                <a href="tel:+22893392526">(+228) 93 39 25 26</a>
+              </div>
+            </li>
+            <li>
+              <svg class="mark-diamond" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 0L16 8L8 16L0 8Z"/><path d="M8 4L12 8L8 12L4 8Z"/></svg>
+              <div>
+                <span class="contact-list__label">Email</span>
+                <a href="mailto:contact@archi-vert.tg">contact@archi-vert.tg</a>
+              </div>
+            </li>
+            <li>
+              <svg class="mark-diamond" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 0L16 8L8 16L0 8Z"/><path d="M8 4L12 8L8 12L4 8Z"/></svg>
+              <div>
+                <span class="contact-list__label">Zone d'intervention</span>
+                <span>Tout le Togo</span>
+              </div>
+            </li>
+          </ul>
+
+          <a class="whatsapp-btn" href="https://wa.me/22897327171" target="_blank" rel="noopener">
+            <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.7-1.2A9 9 0 1 0 12 3Z"/><path fill="currentColor" stroke="none" d="M8.5 8.8c.2-.5.5-.5.8-.5h.6c.2 0 .4 0 .6.5.2.5.7 1.7.7 1.9s0 .3-.2.5c-.1.2-.3.4-.4.5-.2.2-.3.3-.1.6.2.4.9 1.3 1.9 2.1 1.3 1 2.2 1.3 2.6 1.5.3.1.5.1.7-.1.2-.2.7-.8.9-1 .2-.3.4-.2.6-.1l1.7.8c.2.1.4.2.4.4 0 .6-.2 1.2-.5 1.5-.4.4-1.3.8-2.6.5-1.6-.4-3.4-1.5-4.7-2.8-1.2-1.2-2-2.6-2.4-3.5-.3-.7-.1-1.4.2-1.9Z"/></svg>
+            Discuter sur WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="images/logo-archi-vert-light.png" alt="ARCHI-VERT" width="46" height="55">
+        <p>Cabinet d'architecture, d'ingénierie, d'urbanisme et d'environnement, présent sur tout le territoire togolais.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Navigation</h4>
+        <ul class="footer__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Contact</h4>
+        <ul class="footer__list">
+          <li><a href="tel:+22891345970">(+228) 91 34 59 70</a></li>
+          <li><a href="mailto:contact@archi-vert.tg">contact@archi-vert.tg</a></li>
+          <li><span>Lomé, Togo</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 ARCHI-VERT. Tous droits réservés.</span>
+      <div class="footer__social">
+        <a href="#" aria-label="ARCHI-VERT sur Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 20V12h2.5l.4-3H13V7c0-.9.3-1.5 1.6-1.5H16V3.1C15.6 3 14.6 3 13.5 3 11.2 3 9.6 4.4 9.6 6.9V9H7v3h2.6v8H13Z"/></svg>
+        </a>
+        <a href="#" aria-label="ARCHI-VERT sur Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="16.2" cy="7.8" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="ARCHI-VERT sur LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="8.5" cy="8.5" r="1.1" fill="currentColor" stroke="none"/><path d="M8.5 11v5.5"/><path d="M12 16.5v-3.2c0-1.4 1-2.3 2.2-2.3s2 .8 2 2.2v3.3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
