@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var prevBtn = document.querySelector('[data-testimonial="prev"]');
     var nextBtn = document.querySelector('[data-testimonial="next"]');
     var index = 0;
+    var autoplayTimer = null;
+    var AUTOPLAY_MS = 6000;
 
     slides.forEach(function (_, i) {
       var dot = document.createElement("button");
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       dot.setAttribute("aria-label", "Afficher le témoignage " + (i + 1));
       dot.setAttribute("aria-current", i === 0 ? "true" : "false");
       dot.addEventListener("click", function () {
-        goTo(i);
+        goTo(i, true);
       });
       if (dotsWrap) dotsWrap.appendChild(dot);
     });
@@ -67,13 +69,45 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    function goTo(i) {
+    function goTo(i, userInitiated) {
       index = (i + slides.length) % slides.length;
       update();
+      if (userInitiated) restartAutoplay();
     }
 
-    if (prevBtn) prevBtn.addEventListener("click", function () { goTo(index - 1); });
-    if (nextBtn) nextBtn.addEventListener("click", function () { goTo(index + 1); });
+    function restartAutoplay() {
+      clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(function () { goTo(index + 1); }, AUTOPLAY_MS);
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", function () { goTo(index - 1, true); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { goTo(index + 1, true); });
+
+    var testimonialsSection = document.getElementById("temoignages");
+    if (testimonialsSection) {
+      testimonialsSection.addEventListener("mouseenter", function () { clearInterval(autoplayTimer); });
+      testimonialsSection.addEventListener("mouseleave", restartAutoplay);
+    }
+
+    restartAutoplay();
+  }
+
+  /* ---------- Animations d'apparition au scroll ---------- */
+  var revealItems = document.querySelectorAll("[data-reveal]");
+  if (revealItems.length) {
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+      revealItems.forEach(function (el) { io.observe(el); });
+    } else {
+      revealItems.forEach(function (el) { el.classList.add("is-visible"); });
+    }
   }
 
   /* ---------- Formulaire de contact (mailto) ---------- */

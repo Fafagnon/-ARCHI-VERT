@@ -254,57 +254,97 @@ body.nav-open{ overflow: hidden; }
 }
 
 /* --- Hero -----------------------------------------------------------------*/
+/* Structure réelle du HTML : <section class="hero container"><div class=
+   "hero__grid"><div class="hero__text">…</div><div class="hero__media">…
+   </div></div></section> — hero__media est donc IMBRIQUÉ dans le conteneur
+   limité à --container (1180px), pas un frère qui vit hors de lui. Le calc()
+   ci-dessous compense à la fois le gutter et la marge de centrage du
+   conteneur pour que l'image atteigne quand même le vrai bord de l'écran. */
 .hero{
-  padding-top: clamp(3rem, 2.4rem + 2vw, 4.5rem);
+  position: relative;
   overflow: visible;
+  padding-block: 0;
 }
 .hero__grid{
-  display: grid;
-  gap: 2.5rem;
-  align-items: center;
+  position: relative;
+  display: block;
+  min-height: auto;
 }
+.hero__text{ max-width: 30rem; position: relative; z-index: 2; }
 .hero__text h1{ margin-bottom: 1.1rem; }
-.hero__text .lead{ margin-bottom: 2rem; max-width: 40ch; }
+.hero__text .lead{ margin-bottom: 2rem; max-width: 36ch; }
 .hero__actions{ display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
 
-.hero__media{ position: relative; }
+.hero__media{ position: relative; margin: 2rem 0 2.5rem; }
 .hero__media img{
-  width: 100%; height: auto; border-radius: var(--radius-md);
+  width: 100%; height: auto; display: block;
   aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: var(--radius-md);
 }
-.hero__caption{
-  position: absolute; left: 1.25rem; bottom: 1.25rem;
-  background: var(--white); border-radius: var(--radius-sm);
-  padding: 0.85rem 1.1rem; box-shadow: 0 12px 30px -12px rgba(15,53,36,0.35);
-  max-width: 15rem;
-}
-.hero__caption p{ font-size: var(--fs-small); color: var(--stone); }
-.hero__caption strong{ display: block; font-family: var(--font-display); color: var(--ink); }
 
 @media (min-width: 860px){
-  .hero__grid{ grid-template-columns: 1fr 0.92fr; gap: 3rem; }
-  .hero{ padding-bottom: 6.5rem; }
-  .hero__media{ margin-bottom: -9rem; }
-  .hero__media img{ aspect-ratio: 3 / 4; }
+  .hero__grid{
+    display: flex;
+    align-items: center;
+    min-height: clamp(30rem, 20rem + 18vw, 42rem);
+    padding-block: clamp(2.5rem, 2rem + 2vw, 4rem);
+  }
+  .hero__text{ max-width: 27rem; padding-right: 2rem; }
+
+  /* Déborde jusqu'au vrai bord de l'écran : on annule le gutter ET la
+     marge de centrage du conteneur (au-delà de --container, sur grand
+     écran) avec le même calcul que --container/--gutter définissent. */
+  .hero__media{
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    margin: 0;
+    width: clamp(360px, 46vw, 760px);
+    right: calc(-1 * (var(--gutter) + max(0px, (100vw - var(--container)) / 2)));
+  }
+  .hero__media img{
+    width: 100%; height: 100%;
+    aspect-ratio: auto;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+  .hero__media::before{
+    content: "";
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(to right, var(--paper) 0%, rgba(246,247,243,0) 22%);
+    pointer-events: none;
+  }
 }
 
 /* --- Bande de statistiques ------------------------------------------------*/
 .stats{
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(160deg, var(--forest) 0%, var(--forest-deep) 100%);
   color: var(--white);
   padding-block: clamp(2.5rem, 2rem + 2vw, 3.5rem);
-  position: relative; z-index: 1;
 }
-@media (min-width: 860px){ .stats{ padding-top: 8rem; } }
+.stats::before{
+  content: "";
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    58deg,
+    rgba(255,255,255,0.055) 0px, rgba(255,255,255,0.055) 1px,
+    transparent 1px, transparent 26px
+  );
+  pointer-events: none;
+}
 
 .stats__grid{
+  position: relative; z-index: 1;
   display: grid; gap: 2rem;
   grid-template-columns: repeat(1, 1fr);
 }
 @media (min-width: 640px){ .stats__grid{ grid-template-columns: repeat(3, 1fr); } }
 
-.stat{ border-left: 1px solid rgba(255,255,255,0.18); padding-left: 1.5rem; }
-.stat:first-child{ border-left: 0; padding-left: 0; }
+.stat{ padding-left: 0; border-left: 0; }
+@media (min-width: 640px){
+  .stat{ border-left: 1px solid rgba(255,255,255,0.18); padding-left: 1.5rem; }
+  .stat:first-child{ border-left: 0; padding-left: 0; }
+}
 .stat__number{
   font-family: var(--font-display); font-weight: 700;
   font-size: var(--fs-stat); line-height: 1; color: var(--white);
@@ -491,7 +531,7 @@ body.nav-open{ overflow: hidden; }
   background: linear-gradient(160deg, var(--forest) 0%, var(--forest-deep) 100%);
   color: var(--white);
   padding: clamp(2rem, 1.6rem + 1.6vw, 3.25rem);
-  display: flex; flex-direction: column; justify-content: space-between; gap: 2.5rem;
+  display: flex; flex-direction: column; justify-content: flex-start; gap: 1.75rem;
 }
 .contact-info h3{ color: var(--white); margin-bottom: 0.75rem; }
 .contact-info > p{ color: rgba(255,255,255,0.72); max-width: 32ch; }
@@ -597,23 +637,61 @@ body.nav-open{ overflow: hidden; }
   .service-detail:nth-child(even) .service-detail__media{ order: 2; }
 }
 
-/* --- Portfolio -------------------------------------------------------------*/
-.filter-bar{ display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2.5rem; }
-.filter-btn{
-  border: 1.5px solid var(--border); border-radius: var(--radius-pill);
-  padding: 0.55rem 1.2rem; font-size: 0.92rem; font-weight: 600;
-  font-family: var(--font-display);
-  transition: border-color 0.2s var(--ease), background-color 0.2s var(--ease), color 0.2s var(--ease);
+/* --- Portfolio — piste "Atelier" ------------------------------------------*/
+/* Onglets soulignés plutôt que pastilles pleines : plus proche d'un sommaire
+   de planches que d'un kit de filtres SaaS. */
+.filter-bar{
+  display: flex; flex-wrap: wrap; gap: 1.8rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem; margin-bottom: 2.5rem;
 }
-.filter-btn:hover{ border-color: var(--green); }
-.filter-btn[aria-pressed="true"]{ background: var(--ink); border-color: var(--ink); color: var(--white); }
+.filter-btn{
+  border: 0; border-radius: 0; background: none;
+  padding: 0 0 0.9rem; font-size: 0.95rem; font-weight: 600;
+  font-family: var(--font-display); color: var(--stone);
+  position: relative;
+  transition: color 0.2s var(--ease);
+}
+.filter-btn:hover{ color: var(--ink); }
+.filter-btn[aria-pressed="true"]{ color: var(--ink); }
+.filter-btn[aria-pressed="true"]::after{
+  content: ""; position: absolute; left: 0; right: 0; bottom: -1px;
+  height: 2px; background: var(--clay);
+}
 
-.portfolio-grid{ display: grid; gap: 1.75rem; grid-template-columns: 1fr; }
-@media (min-width: 640px){ .portfolio-grid{ grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1000px){ .portfolio-grid{ grid-template-columns: repeat(3, 1fr); } }
-
+.portfolio-grid{ display: block; }
 .portfolio-item{ display: none; }
 .portfolio-item.is-visible{ display: block; }
+
+.plate{
+  display: grid; grid-template-columns: 1fr; gap: 1.4rem;
+  align-items: center;
+  padding: 2.5rem 0; border-bottom: 1px solid var(--border);
+}
+@media (min-width: 720px){
+  .plate{ grid-template-columns: 1.2fr 1fr; gap: 3rem; padding: 3.6rem 0; }
+  .plate--alt{ grid-template-columns: 1fr 1.2fr; }
+  .plate--alt .plate__media{ order: 2; }
+  .plate--alt .plate__info{ order: 1; text-align: right; }
+  .plate--alt .plate__info .plate__cat{ justify-content: flex-end; }
+}
+.plate__media{
+  aspect-ratio: 4/3; overflow: hidden; position: relative;
+  background: var(--paper-alt); border-radius: 0;
+}
+.plate__media img{
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(0.15) saturate(1.05);
+  transition: filter 0.5s var(--ease), transform 0.6s var(--ease);
+}
+.plate:hover .plate__media img{ filter: grayscale(0) saturate(1.15); transform: scale(1.03); }
+.plate__cat{
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.85rem; color: var(--stone); margin-bottom: 0.9rem;
+}
+.plate__cat .dot{ width: 6px; height: 6px; border-radius: 50%; background: var(--clay); display: inline-block; }
+.plate__info h3{ margin: 0 0 0.7rem; }
+.plate__place{ font-size: 0.95rem; color: var(--stone); margin: 0; }
 
 .cta-banner{
   text-align: left; border-radius: var(--radius-md);
@@ -624,3 +702,11 @@ body.nav-open{ overflow: hidden; }
   .cta-banner{ flex-direction: row; align-items: center; justify-content: space-between; gap: 2rem; }
   .cta-banner h2{ max-width: 24ch; margin: 0; }
 }
+
+/* --- Animations d'apparition au scroll ------------------------------------*/
+[data-reveal]{
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+[data-reveal].is-visible{ opacity: 1; transform: none; }
