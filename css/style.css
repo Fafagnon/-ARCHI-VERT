@@ -210,6 +210,8 @@ p{ max-width: 62ch; }
 
 .nav__panel{
   position: fixed; inset: 0 0 0 30%;
+  z-index: 101;
+  pointer-events: none;
   background: var(--paper);
   display: flex; flex-direction: column; justify-content: center;
   gap: 2rem; padding: 2rem var(--gutter);
@@ -217,7 +219,7 @@ p{ max-width: 62ch; }
   transition: transform 0.3s var(--ease);
   border-left: 1px solid var(--border);
 }
-.nav__panel.is-open{ transform: translateX(0); }
+.nav__panel.is-open{ transform: translateX(0); pointer-events: auto; }
 .nav__links{ display: flex; flex-direction: column; gap: 1.4rem; }
 .nav__links a{
   font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;
