@@ -174,4 +174,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     applyFilter("tous");
   }
+
+  /* ---------- Agrandissement des images du portfolio ---------- */
+  var lightbox = document.querySelector("#lightbox");
+  if (lightbox) {
+    var lightboxImage = lightbox.querySelector(".lightbox__image");
+    var lightboxClose = lightbox.querySelector(".lightbox__close");
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      document.body.classList.remove("nav-open");
+    }
+
+    document.querySelectorAll(".plate__zoom").forEach(function (button) {
+      button.addEventListener("click", function () {
+        lightboxImage.src = button.dataset.lightboxSrc;
+        lightboxImage.alt = button.dataset.lightboxAlt;
+        lightbox.hidden = false;
+        lightboxClose.focus();
+      });
+    });
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+    });
+  }
 });
